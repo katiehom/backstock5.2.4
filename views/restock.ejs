@@ -1,0 +1,116 @@
+<%- include('partials/header') %> <%- include('partials/nav') %>
+
+<main>
+  <section class="table-container shadow-lg">
+    <h2 class="table-label restock-label">Restock Shopping List</h2>
+    <div class="myInput-container">
+      <input
+        id="myRestockInput"
+        onkeyup="searchRestockTable()"
+        type="text"
+        placeholder="Search List"
+        class="shadow text-center"
+      />
+    </div>
+    <table
+      id="restockTable"
+      class="table table-sm table-dark table-hover shadow table-sortable"
+    >
+      <thead>
+        <tr>
+          <th></th>
+          <th class="sort restock-col-label">Brand</th>
+          <th class="sort restock-col-label">Description</th>
+          <th class="sort restock-col-label">
+            <span class="restock-mobile-hide quantity-head restock-col-label"
+              >Quantity</span
+            >
+            <span class="restock-mobile-show restock-col-label mx-5">#</span>
+          </th>
+          <th class="sort restock-col-label">Store</th>
+          <!-- <th class="mobile-hide width-hide restock-col-label">Comments</th> -->
+          <th class="restock-col-label"><i class="fa-solid fa-comment"></i></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% restockItems.forEach(el => {%>
+        <tr class="align-middle restockRow">
+          <td class="restockItem pencil" data-id="<%=el._id%>">
+            <a
+              href="/restock/editRestock/<%= el.id %>/"
+              class="fa fa-pen-to-square pencil-btn-restock"
+            >
+            </a>
+          </td>
+          <td class="restockItem" data-id="<%=el._id%>">
+            <span class="restockSpan"><%= el.brand %></span>
+          </td>
+          <td class="restockItem" data-id="<%=el._id%>">
+            <span class="restockSpan"><%= el.description %></span>
+          </td>
+          <td class="restockItem quantity-box" data-id="<%=el._id%>">
+            <form id="decreaseRestock" class="quantityForm d-inline">
+              <button
+                class="noButton"
+                type="submit"
+                formaction="/restock/decreaseRestock/<%= el.id %>?_method=PUT"
+                formmethod="POST"
+              >
+                <i
+                  class="fa fa-minus-circle restockMinus"
+                  form="decreaseRestock"
+                ></i>
+              </button>
+            </form>
+            <span class="restockSpan quantityNum text-center"
+              ><%= el.quantity %></span
+            >
+            <form id="increaseRestock" class="quantityForm d-inline">
+              <button
+                class="noButton"
+                type="submit"
+                formaction="/restock/increaseRestock/<%= el.id %>?_method=PUT"
+                formmethod="POST"
+                form="increaseRestock"
+              >
+                <i class="fa fa-plus-circle restockPlus"></i>
+              </button>
+            </form>
+          </td>
+          <td class="restockItem" data-id="<%=el._id%>">
+            <span class="restockSpan"><%= el.store %></span>
+          </td>
+          <td class="restockItem" data-id="<%=el._id%>">
+            <span class="restockSpan"><%= el.comments %></span>
+          </td>
+          <td>
+            <form id="deleteRestockRow">
+              <button
+                class="noButton"
+                type="submit"
+                formaction="/restock/deleteRestock/<%= el.id %>?_method=DELETE"
+                formmethod="POST"
+                form="deleteRestockRow"
+              >
+                <i class="fa fa-trash-can restockDelete"></i>
+              </button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<div class="text-center">
+  <a
+    href="/restock/addRestock"
+    class="btn btn-warning mb-3 new-restock-btn shadow"
+  >
+    Add New Restock Item
+  </a>
+</div>
+
+<%- include('partials/footer') %>
