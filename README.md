@@ -30,22 +30,33 @@ Version 1 - MVP - Add items to a Backstock list which can be sorted, filtered, u
 
 Version 2 - Added shopping list functionality for users to add unique items to their shopping list or to import them directly from the Backstock list. When importing, the quantity may be reflective of the ideal quantity and the quantity already on hand. Users can delete items from the shopping list without affecting their Backstock list.
 
-## Optimizations
-Future iterations might include notifying users when expiration dates are approaching, filtering items based on multiple categories, marking shopping list items as complete, and the ability to add (manually or automatically) all out-of-stock items to the shopping list.
-
 ## Lessons Learned:
 
 I learned a lot about working with Bootstrap classes and when this was advantageous, and when it was better to use my own styling. Sorting tables, specifically dates, proved to be more difficult than first anticipated. Date rendering also presented challenges, and I ended up using Day.js which is a suggested replacement for the ever-popular Moment.js, which is considered legacy.
 
 When changing some client-side JavaScript functions to forms with method override, I learned about methods submit the same form using different methods using button attributes such as `formaction` and `formmethod`. 
 
+## Optimizations
+Future iterations might include notifying users when expiration dates are approaching, filtering items based on multiple categories, marking shopping list items as complete, and the ability to add (manually or automatically) all out-of-stock items to the shopping list.
+
+This application would also be well-suited to use a JavaScript framework, such as React, where statefulness would be helpful. Also, writing in React Native.
+
+It would be wonderful if the app could also use a UPC scanner and connect to an API for easier addition of items.
+
 ---
 
-# Things to add
+# TO-DO:
 
-- 
-  - 
-  - 
+[X] Refactor search filter code
+[ ] Ensure accessibility - check functionality with tabbing and screen readers
+[ ] In `edit.ejs` create select dropdown dynamically
+[ ] Treat each row as a card and style differently on mobile
+[ ] Create external server-side filter for sorting items
+[ ] Add delete confirmation on Restock page
+[ ] Format footer to stick to bottom of page
+[ ] Select more than one item at a time to update quantity
+[ ] Update quantity or delete backstock items on main screen instead of on edit page
+
  ---
  
 
