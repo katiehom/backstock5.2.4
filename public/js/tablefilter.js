@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rowData.push(cell.textContent.trim().toLowerCase());
       }
     });
-    const rowString = rowData.join(', ');
+    const rowString = rowData.join(' ');
     console.log(rowString);
 
     backstockSearchInput?.addEventListener('keyup', function() {
