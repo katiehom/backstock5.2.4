@@ -1,5 +1,4 @@
 const Restock = require("../models/Restock");
-const dayjs = require("dayjs");
 
 module.exports = {
   getRestock: async (req, res) => {
