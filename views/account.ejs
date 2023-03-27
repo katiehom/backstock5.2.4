@@ -21,23 +21,23 @@
         </div>
     </div>
     <div class="signup-container-edit">
-        <form method='POST' action="/account/<%= user._id %>/?_method=PUT" 
+        <form method="POST" action="/account/<%= user._id %>/?_method=PUT" 
             >
             <div class="form-floating">
-                <input type="text" class="form-control login-input shadow" id="floatingUserName" placeholder="User Name" name='userName' required>
+                <input type="text" class="form-control login-input shadow" id="floatingUserName" placeholder="User Name" name="userName">
                 <label for="floatingUserName">New User Name</label>
             </div>
             <div class="form-floating">
-                <input type="email" class="form-control login-input shadow" id="floatingEmail" placeholder="Email" name='email' required>
+                <input type="email" class="form-control login-input shadow" id="floatingEmail" placeholder="Email" name="email" required>
                 <label for="floatingEmail">Email</label>
             </div>
             <!-- <div class="form-floating">
-                <input type="password" class="form-control login-input shadow password" id="floatingSignupPassword" placeholder="Password" name='password' data-toggle required>
+                <input type="password" class="form-control login-input shadow password" id="floatingSignupPassword" placeholder="Password" name="password" data-toggle required>
                 <i class="far fa-eye-slash signup-password-eye" id="signup"></i>
                 <label for="floatingPassword">New Password</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control login-input shadow password" id="floatingConfirmPassword" placeholder="Confirm Password" name='confirmPassword' data-toggle required>
+                <input type="password" class="form-control login-input shadow password" id="floatingConfirmPassword" placeholder="Confirm Password" name="confirmPassword" data-toggle required>
                 <i class="far fa-eye-slash signup-password-eye" id="confirm"></i>
                 <label for="floatingConfirmPassword">Confirm New Password</label>
             </div> -->
