@@ -58,6 +58,10 @@ It would be wonderful if the app could also use a UPC scanner and connect to an 
 - [ ] Update quantity or delete backstock items on main screen instead of on edit page
 - [ ] Refactor code for unit tests
 - [ ] Implement unit tests
+- [ ] Add page to view account details
+- [ ] Add functionality to edit account details
+- [ ] Add forgotten password or password reset functionality
+- [ ] Add ability to mark restock items as complete
 
  ---
  
