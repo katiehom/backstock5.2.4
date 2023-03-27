@@ -7,13 +7,13 @@
         <h2 class="text-center restock-header">Edit Restock Item Info</h2>
         <form 
             action="/restock/<%= restockItem._id %>/?_method=PUT" 
-            method='POST'>
+            method="POST">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control shadow text-center" id="floatingRestockBrand" placeholder="Brand" name='brand' value="<%= restockItem.brand %>">
+                <input type="text" class="form-control shadow text-center" id="floatingRestockBrand" placeholder="Brand" name="brand" value="<%= restockItem.brand %>">
                 <label for="floatingBrand">Brand</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" required class="form-control shadow text-center" id="floatingRestockDescription" placeholder="Description" name='description' value="<%= restockItem.description %>">
+                <input type="text" required class="form-control shadow text-center" id="floatingRestockDescription" placeholder="Description" name="description" value="<%= restockItem.description %>">
                 <label for="floatingDescription">Description</label>
             </div>
             <div class="d-flex justify-content-center quantity-row">
@@ -22,7 +22,7 @@
                         <i class="fa fa-minus-circle" id="quantityMinus"></i>
                     </div>
                     <div class="form-floating mb-3 col-5">
-                        <input type="number" required min="0" value="<%= restockItem.quantity %>"step="1" class="form-control shadow quantity-input text-center" id="floatingQuantity" placeholder="Quantity" name='quantity'>
+                        <input type="number" required min="0" value="<%= restockItem.quantity %>"step="1" class="form-control shadow quantity-input text-center" id="floatingQuantity" placeholder="Quantity" name="quantity">
                         <label for="floatingQuantity"> Quantity *</label>
                     </div>
                     <div class="plus">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control shadow text-center" id="floatingRestockStore" placeholder="Store" name='store' value="<%= restockItem.store %>">
+                <input type="text" class="form-control shadow text-center" id="floatingRestockStore" placeholder="Store" name="store" value="<%= restockItem.store %>">
                 <label for="floatingRestockStore">Store</label>
             </div>
             <div class="form-floating">
