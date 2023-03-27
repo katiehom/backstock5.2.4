@@ -5,13 +5,13 @@
 <section class="inputSection">
     <div class="container input-container mt-5 col-lg-6">
         <h2 class="text-center mb-3 restock-header">Enter Restock Item Info</h2>
-        <form action="/restock/createRestock" method='POST'>
+        <form action="/restock/createRestock" method="POST">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control shadow text-center" id="floatingRestockBrand" placeholder="Brand" name='brand'>
                 <label for="floatingRestockBrand">Brand </label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" required class="form-control shadow text-center" id="floatingRestockDescription" placeholder="Description" name='description'>
+                <input type="text" required class="form-control shadow text-center" id="floatingRestockDescription" placeholder="Description" name="description">
                 <label for="floatingRestockDescription">Description *</label>
             </div>
             <div class="d-flex justify-content-center quantity-row">
@@ -20,7 +20,7 @@
                         <i class="fa fa-minus-circle" id="quantityMinus"></i>
                     </div>
                     <div class="form-floating mb-3 col-5">
-                        <input type="number" required min="0" value="0" step="1" class="form-control shadow quantity-input text-center" id="floatingQuantity" placeholder="Quantity" name='quantity'>
+                        <input type="number" required min="0" value="0" step="1" class="form-control shadow quantity-input text-center" id="floatingQuantity" placeholder="Quantity" name="quantity">
                         <label for="floatingQuantity"> Quantity *</label>
                     </div>
                     <div class="plus">
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control shadow text-center" id="floatingRestockStore" placeholder="Store" name='store'>
+                <input type="text" class="form-control shadow text-center" id="floatingRestockStore" placeholder="Store" name="store">
                 <label for="floatingLocation">Store</label>
             </div>
             <div class="form-floating">
