@@ -9,9 +9,9 @@ router.get('/editRestock/:id', ensureAuth, restockController.editRestock)
 router.put('/:id', ensureAuth, restockController.updateRestock)
 router.put('/increaseRestock/:id', ensureAuth, restockController.increaseRestock)
 router.put('/decreaseRestock/:id', ensureAuth, restockController.decreaseRestock)
-router.post('/createRestock', restockController.createRestock)
-router.post('/exportRestock', restockController.exportRestock)
-router.delete('/deleteRestock/:id', restockController.deleteRestock)
+router.post('/createRestock', ensureAuth, restockController.createRestock)
+router.post('/exportRestock', ensureAuth, restockController.exportRestock)
+router.delete('/deleteRestock/:id', ensureAuth, restockController.deleteRestock)
 
 module.exports = router
 

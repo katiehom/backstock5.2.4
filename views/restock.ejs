@@ -5,8 +5,7 @@
     <h2 class="table-label restock-label">Restock Shopping List</h2>
     <div class="myInput-container">
       <input
-        id="myRestockInput"
-        onkeyup="searchRestockTable()"
+        id="restockSearchInput"
         type="text"
         placeholder="Search List"
         class="shadow text-center"
@@ -28,7 +27,6 @@
             <span class="restock-mobile-show restock-col-label mx-5">#</span>
           </th>
           <th class="sort restock-col-label">Store</th>
-          <!-- <th class="mobile-hide width-hide restock-col-label">Comments</th> -->
           <th class="restock-col-label"><i class="fa-solid fa-comment"></i></th>
           <th></th>
         </tr>
@@ -112,5 +110,8 @@
     Add New Restock Item
   </a>
 </div>
+
+<script src="/js/tablesort.js"></script>
+<script src="/js/tablefilter.js"></script>
 
 <%- include('partials/footer') %>

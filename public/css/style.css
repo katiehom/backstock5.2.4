@@ -51,10 +51,13 @@ h3 {
 .restock {
   color: rgb(244, 207, 69);
 }
-.footer-span {
+.footer-span, .signup-text, .member-text {
   margin: 2rem 0 1rem 0;
   font-size: 0.9rem;
   color: white;
+}
+.signup-text:hover {
+  color: rgb(235, 145, 59);
 }
 .footer-span a {
   color: white;
@@ -72,6 +75,10 @@ footer {
 }
 .navbar a {
   max-width: 260px;
+}
+.member-div {
+  margin: 2rem auto;
+  text-align: center;
 }
 
 /**************** Containers *****************/
@@ -227,22 +234,22 @@ textarea + label,
 input.internal.autofill.selected {
   background-color: white;
 }
-#myInput,
-#myRestockInput {
+#backstockSearchInput,
+#restockSearchInput {
   border: 1px solid transparent;
   border-radius: 20px;
   background-color: rgb(68, 69, 73);
   caret-color: rgb(244, 207, 69);
   color: white;
 }
-#myRestockInput {
+#restockSearchInput {
   caret-color: #e565ff;
 }
-#myInput::placeholder {
+#backstockSearchInput::placeholder {
   color: rgb(108, 217, 191);
   font-size: 0.9rem;
 }
-#myRestockInput::placeholder {
+#restockSearchInput::placeholder {
   color: rgb(108, 217, 191);
 }
 
@@ -255,7 +262,7 @@ h2 {
 }
 .quantity-box,
 .quantity-head {
-  min-width: 80px;
+  min-width: 100px;
 }
 td.restockItem.quantity-box,
 th.sort.restock-col-label {
@@ -617,7 +624,7 @@ button.noButton {
 }
 @media screen and (max-width: 644px) {
   table,
-  #myInput::placeholder {
+  #backstockSearchInputt::placeholder {
     font-size: 0.8rem;
   }
   #newBackstockCancel,

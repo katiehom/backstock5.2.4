@@ -11,28 +11,35 @@
         <img class="login-img" src="assets/profile.png" alt="Backstock">
         <form action="/signup" method="POST">
             <div class="form-floating mb-5">
-                <input type="text" class="form-control login-input shadow" id="floatingUserName" placeholder="User Name" name='userName' required>
+                <input type="text" class="form-control login-input shadow" id="floatingUserName" placeholder="User Name" name='userName' autocomplete="username" required>
                 <label for="floatingUserName">User Name</label>
             </div>
             <div class="form-floating mb-5">
-                <input type="email" class="form-control login-input shadow" id="floatingEmail" placeholder="Email" name='email' required>
+                <input type="email" class="form-control login-input shadow" id="floatingEmail" placeholder="Email" name='email' autocomplete="email" required>
                 <label for="floatingEmail">Email</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control login-input shadow password" id="floatingSignupPassword" placeholder="Password" name='password' data-toggle required>
+                <input type="password" class="form-control login-input shadow password" id="floatingSignupPassword" placeholder="Password" name='password' autocomplete="new-password" data-toggle required>
                 <i class="far fa-eye-slash signup-password-eye" id="signup"></i>
                 <label for="floatingPassword">Password</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control login-input shadow password" id="floatingConfirmPassword" placeholder="Confirm Password" name='confirmPassword' data-toggle required>
+                <input type="password" class="form-control login-input shadow password" id="floatingConfirmPassword" placeholder="Confirm Password" name='confirmPassword' autocomplete="new-password" data-toggle required>
                 <i class="far fa-eye-slash signup-password-eye" id="confirm"></i>
                 <label for="floatingConfirmPassword">Confirm Password</label>
             </div>
             <div class="text-center">
                 <input class="login-btn shadow" type="submit">
             </div>
+            <div class="member-div">
+                <span class="member-text">Already a member?  
+                    <a href="/login" class="signup-text">Login</a>
+                </span>
+            </div>
         </form>
     </div>
 </main>
+
+<script src="/js/password.js"></script>
 
 <%- include('partials/footer') %>
