@@ -624,7 +624,7 @@ button.noButton {
 }
 @media screen and (max-width: 644px) {
   table,
-  #backstockSearchInputt::placeholder {
+  #backstockSearchInput::placeholder {
     font-size: 0.8rem;
   }
   #newBackstockCancel,
