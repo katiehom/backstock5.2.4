@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const RestockSchema = new mongoose.Schema({
   brand: {
@@ -30,6 +30,6 @@ const RestockSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-}, { timestamps: true })
+}, { timestamps: true });
 
-module.exports = mongoose.model('Restock', RestockSchema)
+module.exports = mongoose.model('Restock', RestockSchema);
