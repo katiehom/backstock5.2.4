@@ -1,11 +1,11 @@
-const Restock = require("../models/Restock");
+const Restock = require('../models/Restock');
 
 module.exports = {
   getRestock: async (req, res) => {
     console.log(req.user);
     try {
       const restockItems = await Restock.find({ userId: req.user.id });
-      res.render("restock.ejs", {
+      res.render('restock.ejs', {
         restockItems: restockItems,
         user: req.user,
       });
@@ -14,12 +14,12 @@ module.exports = {
     }
   },
   addRestock: async (req, res) => {
-    res.render("addrestock.ejs");
+    res.render('addrestock.ejs');
   },
   editRestock: async (req, res) => {
     try {
       const restockItem = await Restock.findById(req.params.id);
-      res.render("editrestock.ejs", {
+      res.render('editrestock.ejs', {
         restockItem: restockItem,
         user: req.user,
       });
@@ -30,7 +30,7 @@ module.exports = {
   updateRestock: async (req, res) => {
     try {
       await Restock.findOneAndUpdate({ _id: req.params.id }, req.body);
-      console.log("Updated Restock Item");
+      console.log('Updated Restock Item');
       res.redirect(`/restock`);
     } catch (err) {
       console.log(err);
@@ -46,8 +46,8 @@ module.exports = {
         comments: req.body.comments,
         userId: req.user.id,
       });
-      console.log("Restock item has been added!");
-      res.redirect("/restock");
+      console.log('Restock item has been added!');
+      res.redirect('/restock');
     } catch (err) {
       console.log(err);
     }
@@ -59,13 +59,13 @@ module.exports = {
         brand: req.body.brand,
         description: req.body.description,
         quantity: restockQuantity,
-        store: "",
-        comments: "",
+        store: '',
+        comments: '',
         completed: false,
         userId: req.user.id,
       });
-      console.log("Backstock item added to Restock Shopping List");
-      res.redirect("/backstock");
+      console.log('Backstock item added to Restock Shopping List');
+      res.redirect('/backstock');
     } catch (err) {
       console.log(err);
     }
@@ -84,8 +84,8 @@ module.exports = {
         { $set: { quantity: 0 } }
       );
 
-      console.log("Quantity -1");
-      res.redirect("/restock");
+      console.log('Quantity -1');
+      res.redirect('/restock');
     } catch (err) {
       console.log(err);
     }
@@ -99,8 +99,8 @@ module.exports = {
           $inc: { quantity: 1 },
         }
       );
-      console.log("Quantity +1");
-      res.redirect("/restock");
+      console.log('Quantity +1');
+      res.redirect('/restock');
     } catch (err) {
       console.log(err);
     }
@@ -111,10 +111,10 @@ module.exports = {
       const post = await Restock.findById({ _id: req.params.id });
       // Delete item from db
       await Restock.remove({ _id: req.params.id });
-      console.log("Deleted Restock item");
-      res.redirect("/restock");
+      console.log('Deleted Restock item');
+      res.redirect('/restock');
     } catch (err) {
-      res.redirect("/restock");
+      res.redirect('/restock');
     }
   },
 };
