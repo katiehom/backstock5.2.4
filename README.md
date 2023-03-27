@@ -47,15 +47,15 @@ It would be wonderful if the app could also use a UPC scanner and connect to an 
 
 # TO-DO:
 
-[X] Refactor search filter code
-[ ] Ensure accessibility - check functionality with tabbing and screen readers
-[ ] In `edit.ejs` create select dropdown dynamically
-[ ] Treat each row as a card and style differently on mobile
-[ ] Create external server-side filter for sorting items
-[ ] Add delete confirmation on Restock page
-[ ] Format footer to stick to bottom of page
-[ ] Select more than one item at a time to update quantity
-[ ] Update quantity or delete backstock items on main screen instead of on edit page
+- [X] Refactor search filter code
+- [ ] Ensure accessibility - check functionality with tabbing and screen readers
+- [ ] In `edit.ejs` create select dropdown dynamically
+- [ ] Treat each row as a card and style differently on mobile
+- [ ] Create external server-side filter for sorting items
+- [ ] Add delete confirmation on Restock page
+- [ ] Format footer to stick to bottom of page
+- [ ] Select more than one item at a time to update quantity
+- [ ] Update quantity or delete backstock items on main screen instead of on edit page
 
  ---
  
