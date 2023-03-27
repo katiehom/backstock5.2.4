@@ -1,12 +1,12 @@
-const Backstock = require("../models/Backstock");
-const dayjs = require("dayjs");
+const Backstock = require('../models/Backstock');
+const dayjs = require('dayjs');
 
 module.exports = {
   getBackstock: async (req, res) => {
     console.log(req.user);
     try {
       const backstockItems = await Backstock.find({ userId: req.user.id });
-      res.render("backstock.ejs", {
+      res.render('backstock.ejs', {
         backstockItems: backstockItems,
         user: req.user,
         dayjs: dayjs,
@@ -16,12 +16,12 @@ module.exports = {
     }
   },
   add: async (req, res) => {
-    res.render("add.ejs");
+    res.render('add.ejs');
   },
   edit: async (req, res) => {
     try {
       const item = await Backstock.findById(req.params.id);
-      res.render("edit.ejs", { item: item, user: req.user });
+      res.render('edit.ejs', { item: item, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -29,7 +29,7 @@ module.exports = {
   update: async (req, res) => {
     try {
       await Backstock.findOneAndUpdate({ _id: req.params.id }, req.body);
-      console.log("Updated Backstock Item");
+      console.log('Updated Backstock Item');
       res.redirect(`/backstock`);
     } catch (err) {
       console.log(err);
@@ -49,8 +49,8 @@ module.exports = {
         comments: req.body.comments,
         userId: req.user.id,
       });
-      console.log("Backstock item has been added!");
-      res.redirect("/backstock");
+      console.log('Backstock item has been added!');
+      res.redirect('/backstock');
     } catch (err) {
       console.log(err);
     }
@@ -61,10 +61,10 @@ module.exports = {
       let post = await Backstock.findById({ _id: req.params.id });
       // Delete item from db
       await Backstock.remove({ _id: req.params.id });
-      console.log("Deleted Backstock item");
-      res.redirect("/backstock");
+      console.log('Deleted Backstock item');
+      res.redirect('/backstock');
     } catch (err) {
-      res.redirect("/backstock");
+      res.redirect('/backstock');
     }
   },
 };
