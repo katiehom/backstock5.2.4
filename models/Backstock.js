@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-const BackstockSchema = new mongoose.Schema(
-  {
+const BackstockSchema = new mongoose.Schema({
     category: {
       type: String,
       required: true,
