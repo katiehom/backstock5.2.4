@@ -33,34 +33,34 @@
         <tbody>
         <% backstockItems.forEach(el => {%>
             <tr class="<%= el.quantity === 0 || el.quantity < el.idealQuantity ? 'restock' : ''%>">    
-                <td class="pencil" data-id='<%=el._id%>'>
+                <td class="pencil" data-id="<%=el._id%>">
                     <a href="/backstock/edit/<%= el.id %>/" class="fa fa-pen-to-square pencil-btn">
                     </a>
                 </td>
-                <td data-id='<%=el._id%>'>
+                <td data-id="<%=el._id%>">
                     <span><%= el.category %></span>
                 </td>
-                <td data-id='<%=el._id%>'>
+                <td data-id="<%=el._id%>">
                     <span><%= el.brand %></span>
                 </td>
-                <td data-id='<%=el._id%>'>
-                    <span class='<%= dayjs(el.expirationDate).isBefore(dayjs()) ? 'expired' : ''%>'><%= el.description %></span>
+                <td data-id="<%=el._id%>">
+                    <span class="<%= dayjs(el.expirationDate).isBefore(dayjs()) ? 'expired' : ''%>"><%= el.description %></span>
                 </td>
-                <td data-id='<%=el._id%>'>
+                <td data-id="<%=el._id%>">
                     <span><%= el.storageLocation %></span>
                 </td>
-                <td class="backstock-quantity" data-id='<%=el._id%>'>
+                <td class="backstock-quantity" data-id="<%=el._id%>">
                     <span><%= el.quantity %></span>
                 </td>
-                <td class="mobile-hide" data-id='<%=el._id%>'>
+                <td class="mobile-hide" data-id="<%=el._id%>">
                     <span><%= el.idealQuantity %></span>
                 </td>
-                <td class="mobile-hide width-hide size" data-id='<%=el._id%>'>
+                <td class="mobile-hide width-hide size" data-id="<%=el._id%>">
                     <span><%= el.size %></span>
                 </td>
-                <td class='mobile-hide width-hide expiration' data-id='<%=el._id%>'>
+                <td class="mobile-hide width-hide expiration" data-id="<%=el._id%>">
                     <% if (el.expirationDate) { %>
-                        <span class='<%= dayjs(el.expirationDate).isBefore(dayjs()) ? 'expired' : ''%>'><%= dayjs(el.expirationDate).format('MM/DD/YYYY') %></span>
+                        <span class="<%= dayjs(el.expirationDate).isBefore(dayjs()) ? 'expired' : ''%>"><%= dayjs(el.expirationDate).format('MM/DD/YYYY') %></span>
                     <%} else { %>
                         <span class="hidden">2005/12-04</span>
                     <% } %>
