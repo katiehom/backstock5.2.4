@@ -6,10 +6,10 @@
     <div class="table-container shadow-lg mt-5">
     <h2 class="table-label"><%= user.userName %>'s Backstock</h2>
     <div class="myInput-container">
-        <input id="myInput" onkeyup="searchTable()" type="text" placeholder="Search Backstock" class="shadow text-center">
+        <input id="backstockSearchInput" type="text" placeholder="Search Backstock" class="shadow text-center">
     </div>
     <table 
-        id="myTable"
+        id="backstockTable"
         class="table table-sm table-dark table-hover shadow table-sortable">
         <thead>
         <tr>
@@ -82,5 +82,8 @@
     </div>
     <div>
 </main>
+
+<script src="/js/tablesort.js"></script>
+<script src="/js/tablefilter.js"></script>
 
 <%- include('partials/footer') %>
