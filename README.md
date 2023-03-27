@@ -56,6 +56,8 @@ It would be wonderful if the app could also use a UPC scanner and connect to an 
 - [ ] Format footer to stick to bottom of page
 - [ ] Select more than one item at a time to update quantity
 - [ ] Update quantity or delete backstock items on main screen instead of on edit page
+- [ ] Refactor code for unit tests
+- [ ] Implement unit tests
 
  ---
  
