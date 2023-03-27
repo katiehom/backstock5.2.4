@@ -62,6 +62,9 @@ It would be wonderful if the app could also use a UPC scanner and connect to an 
 - [ ] Add functionality to edit account details
 - [ ] Add forgotten password or password reset functionality
 - [ ] Add ability to mark restock items as complete
+- [ ] Build in React 
+- [ ] Build in React Native
+- [ ] Add UPC scanner linked to an API
 
  ---
  
