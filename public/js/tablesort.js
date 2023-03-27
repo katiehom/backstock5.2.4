@@ -4,7 +4,7 @@
 function sortTableByColumn(table, column, asc = true) {
     const dirModifier = asc ? 1 : -1
     const tBody = table.tBodies[0]
-    const rows = Array.from(tBody.querySelectorAll('tr'))
+    const rows = Array.from(tBody?.querySelectorAll('tr'))
 
     // Sort each row
     const sortedRows = rows.sort((a, b) => {
@@ -35,7 +35,7 @@ function sortTableByColumn(table, column, asc = true) {
 
 sortTableByColumn(document.querySelector('table'), 1)
 
-document.querySelectorAll('.table-sortable th.sort').forEach(headerCell => {
+document.querySelectorAll('.table-sortable th.sort')?.forEach(headerCell => {
     headerCell.addEventListener('click', () => {
         const tableElement = headerCell.parentElement.parentElement.parentElement
         const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell)
