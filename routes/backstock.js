@@ -7,8 +7,8 @@ router.get('/', ensureAuth, backstockController.getBackstock)
 router.get('/add', ensureAuth, backstockController.add)
 router.get('/edit/:id', ensureAuth, backstockController.edit)
 router.put('/:id', ensureAuth, backstockController.update)
-router.post('/createBackstock', backstockController.createBackstock)
-router.delete('/deleteBackstock/:id', backstockController.deleteBackstock)
+router.post('/createBackstock', ensureAuth, backstockController.createBackstock)
+router.delete('/deleteBackstock/:id', ensureAuth, backstockController.deleteBackstock)
 
 module.exports = router
 
