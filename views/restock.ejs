@@ -35,20 +35,20 @@
       <tbody>
         <% restockItems.forEach(el => {%>
         <tr class="align-middle restockRow">
-          <td class="restockItem pencil" data-id="<%=el._id%>">
+          <td class="restockItem pencil" data-id="<%= el._id %>">
             <a
               href="/restock/editRestock/<%= el.id %>/"
               class="fa fa-pen-to-square pencil-btn-restock"
             >
             </a>
           </td>
-          <td class="restockItem" data-id="<%=el._id%>">
+          <td class="restockItem" data-id="<%= el._id %>">
             <span class="restockSpan"><%= el.brand %></span>
           </td>
-          <td class="restockItem" data-id="<%=el._id%>">
+          <td class="restockItem" data-id="<%= el._id %>">
             <span class="restockSpan"><%= el.description %></span>
           </td>
-          <td class="restockItem quantity-box" data-id="<%=el._id%>">
+          <td class="restockItem quantity-box" data-id="<%= el._id %>">
             <form id="decreaseRestock" class="quantityForm d-inline">
               <button
                 class="noButton"
@@ -77,10 +77,10 @@
               </button>
             </form>
           </td>
-          <td class="restockItem" data-id="<%=el._id%>">
+          <td class="restockItem" data-id="<%= el._id %>">
             <span class="restockSpan"><%= el.store %></span>
           </td>
-          <td class="restockItem" data-id="<%=el._id%>">
+          <td class="restockItem" data-id="<%= el._id %>">
             <span class="restockSpan"><%= el.comments %></span>
           </td>
           <td>
