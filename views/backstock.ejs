@@ -32,7 +32,7 @@
         </thead>
         <tbody>
         <% backstockItems.forEach(el => {%>
-            <tr class="<%= el.quantity === 0 || el.quantity < el.idealQuantity ? 'restock' : ''%>">    
+            <tr class="<%=el.quantity === 0 || el.quantity < el.idealQuantity ? 'restock' : ''%>">    
                 <td class="pencil" data-id="<%=el._id%>">
                     <a href="/backstock/edit/<%= el.id %>/" class="fa fa-pen-to-square pencil-btn">
                     </a>
@@ -44,7 +44,7 @@
                     <span><%= el.brand %></span>
                 </td>
                 <td data-id="<%=el._id%>">
-                    <span class="<%= dayjs(el.expirationDate).isBefore(dayjs()) ? 'expired' : ''%>"><%= el.description %></span>
+                    <span class="<%=el.expiredClass%>"><%= el.description %></span>
                 </td>
                 <td data-id="<%=el._id%>">
                     <span><%= el.storageLocation %></span>
@@ -60,9 +60,9 @@
                 </td>
                 <td class="mobile-hide width-hide expiration" data-id="<%=el._id%>">
                     <% if (el.expirationDate) { %>
-                        <span class="<%= dayjs(el.expirationDate).isBefore(dayjs()) ? 'expired' : ''%>"><%= dayjs(el.expirationDate).format('MM/DD/YYYY') %></span>
+                        <span class="<%=el.expiredClass%>"><%= el.displayExpirationDate %></span>
                     <%} else { %>
-                        <span class="hidden">2005/12-04</span>
+                        <span class="hidden"><%= el.displayExpirationDate %></span>
                     <% } %>
                 </td>
             </tr>
