@@ -6,10 +6,13 @@ module.exports = {
     console.log(req.user);
     try {
       const backstockItems = await Backstock.find({ userId: req.user.id });
+      for (let i = 0; i < backstockItems.length; i++) {
+        backstockItems[i].displayExpirationDate = dayjs(backstockItems[i].expirationDate || '2005-01-01').format('MM/DD/YYYY');
+        backstockItems[i].expiredClass = dayjs(backstockItems[i].expirationDate).isBefore(dayjs()) ? 'expired' : '';
+      }
       res.render('backstock.ejs', {
         backstockItems: backstockItems,
         user: req.user,
-        dayjs: dayjs,
       });
     } catch (err) {
       console.log(err);

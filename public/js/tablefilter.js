@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cells = row.querySelectorAll('td span');
     const rowData = [];
     cells.forEach((cell, index) => {
-      if (index < cells.length - 1) {
+      if (index < cells.length) {
         rowData.push(cell.textContent.trim().toLowerCase());
       }
     });
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cells.forEach((cell) => {
         rowData.push(cell.textContent.trim().toLowerCase());
     });
-    const rowString = rowData.join(', ');
+    const rowString = rowData.join(' ');
     console.log(rowString);
 
     restockSearchInput?.addEventListener('keyup', function() {
