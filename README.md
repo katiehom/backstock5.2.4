@@ -45,10 +45,20 @@ It would be wonderful if the app could also use a UPC scanner and connect to an 
 
 ---
 
+# Accomplishments:
+
+- [x] Added restock shopping list
+- [x] Added backstock item to restock shopping list
+- [x] Displayed visually based on the condition of an item being low in stock or out of stock
+- [x] Displayed visually based on the condition of an item being expired
+- [x] Added ability to increase and decrease quantities
+- [x] Refactored search filter code
+- [x] Refactored date function code and relocated within server
+
+---
+
 # TO-DO:
 
-- [x] Refactor search filter code
-- [x] Refactor date function code
 - [ ] Ensure accessibility - check functionality with tabbing and screen readers
 - [ ] In `edit.ejs` create select dropdown dynamically
 - [ ] Treat each row as a card and style differently on mobile
