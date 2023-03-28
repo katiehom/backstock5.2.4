@@ -47,7 +47,8 @@ It would be wonderful if the app could also use a UPC scanner and connect to an 
 
 # TO-DO:
 
-- [X] Refactor search filter code
+- [x] Refactor search filter code
+- [x] Refactor date function code
 - [ ] Ensure accessibility - check functionality with tabbing and screen readers
 - [ ] In `edit.ejs` create select dropdown dynamically
 - [ ] Treat each row as a card and style differently on mobile
