@@ -9,6 +9,7 @@ module.exports = {
       for (let i = 0; i < backstockItems.length; i++) {
         backstockItems[i].displayExpirationDate = dayjs(backstockItems[i].expirationDate || '2005-01-01').format('MM/DD/YYYY');
         backstockItems[i].expiredClass = dayjs(backstockItems[i].expirationDate).isBefore(dayjs()) ? 'expired' : '';
+        backstockItems[i].restockClass = (backstockItems[i].quantity === 0 || backstockItems[i].quantity < backstockItems[i].idealQuantity) ? 'restock' : '';
       };
       res.render('backstock.ejs', {
         backstockItems: backstockItems,
