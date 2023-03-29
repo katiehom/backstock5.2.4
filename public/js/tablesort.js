@@ -11,7 +11,7 @@ function sortTableByColumn(table, column, asc = true) {
         const aColText = a.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
         const bColText = b.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim();
         if (isNaN(parseFloat(aColText)) && isNaN(parseFloat(bColText))) {
-            return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
+            return aColText.localeCompare(bColText) * dirModifier;
         } else if (aColText.includes('/') && bColText.includes('/')) {
             const [aMonth, aDay, aYear] = aColText.split('/');
             const [bMonth, bDay, bYear] = bColText.split('/');

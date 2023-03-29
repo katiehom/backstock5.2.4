@@ -54,6 +54,9 @@ It would be wonderful if the app could also use a UPC scanner and connect to an 
 - [x] Added ability to increase and decrease quantities
 - [x] Refactored search filter code
 - [x] Refactored date function code and relocated within server
+- [x] Relocated conditional expired class code within server
+- [x] Relocated conditional restock class code within server
+- [x] Refactored function for sorting dates in table
 
 ---
 
