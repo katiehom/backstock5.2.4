@@ -59,11 +59,7 @@
                     <span><%= el.size %></span>
                 </td>
                 <td class="mobile-hide width-hide expiration" data-id="<%= el._id %>">
-                    <% if (el.expirationDate) { %>
-                        <span class="<%= el.expiredClass %>"><%= el.displayExpirationDate %></span>
-                    <%} else { %>
-                        <span class="hidden"><%= el.displayExpirationDate %></span>
-                    <% } %>
+                    <span class="<%= el.expiredClass %>"><%= el.displayExpirationDate %></span>
                 </td>
             </tr>
         <% }) %>
