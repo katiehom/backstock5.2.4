@@ -13,9 +13,19 @@ function sortTableByColumn(table, column, asc = true) {
         if (isNaN(parseFloat(aColText)) && isNaN(parseFloat(bColText))) {
             return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
         } else if (aColText.includes('/') && bColText.includes('/')) {
-            return new Date(aColText).getTime() > new Date(bColText).getTime() ? (1 * dirModifier) : (-1 * dirModifier);
-        }
-          return +aColText > +bColText ? (1 * dirModifier) : (-1 * dirModifier);
+            const [aMonth, aDay, aYear] = aColText.split('/');
+            const [bMonth, bDay, bYear] = bColText.split('/');
+            const aDate = new Date(`${aYear}-${aMonth}-${aDay}`);
+            const bDate = new Date(`${bYear}-${bMonth}-${bDay}`);
+            if (aDate < bDate) {
+              return -1 * dirModifier;
+            } else if (aDate > bDate) {
+              return 1 * dirModifier;
+            } else {
+              return 0;
+            }
+          }
+          return (+aColText - +bColText) * dirModifier;
         });
 
     // Remove all existing TRs from the table
