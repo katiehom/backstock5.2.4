@@ -32,7 +32,6 @@
         </thead>
         <tbody>
         <% backstockItems.forEach(el => {%>
-            <!-- <tr class="<%= el.quantity === 0 || el.quantity < el.idealQuantity ? 'restock' : '' %>">     -->
             <tr class="<%= el.restockClass %>">    
                 <td class="pencil" data-id="<%= el._id %>">
                     <a href="/backstock/edit/<%= el.id %>/" class="fa fa-pen-to-square pencil-btn">
@@ -60,11 +59,7 @@
                     <span><%= el.size %></span>
                 </td>
                 <td class="mobile-hide width-hide expiration" data-id="<%= el._id %>">
-                    <% if (el.expirationDate) { %>
-                        <span class="<%= el.expiredClass %>"><%= el.displayExpirationDate %></span>
-                    <%} else { %>
-                        <span class="hidden"><%= el.displayExpirationDate %></span>
-                    <% } %>
+                    <span class="<%= el.expiredClass %>"><%= el.displayExpirationDate %></span>
                 </td>
             </tr>
         <% }) %>
